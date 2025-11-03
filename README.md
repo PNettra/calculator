@@ -1,2 +1,2 @@
 # calculator
-Fifth assignment for The Odin Project's Foundations
+Basic calculator with button and keyboard input
