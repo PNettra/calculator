@@ -26,6 +26,10 @@ body {
     background: rgb(70, 70, 70);
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 #buttonBackspace, #buttonDecimal {
     margin-right: 76px;
 }

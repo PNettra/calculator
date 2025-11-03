@@ -3,14 +3,13 @@ container.classList.add('container');
 document.body.appendChild(container);
 container.style.border = "5px solid black";
 container.style.height = "100px";
-//container.tabindex = "0";
-//container.focus();
 
 const display = document.createElement("div");
 display.classList.add('display');
 container.appendChild(display);
 display.style.border = "5px solid black";
 display.style.height = "20px";
+//display.tabIndex = 0;
 
 const buttonContainer = document.createElement("div");
 buttonContainer.classList.add('buttonContainer');
@@ -158,6 +157,46 @@ const operate = function(firstInt, operator, secondInt) {
 // }
 
 let justCalculated = false;
+
+// display.addEventListener("click", (event) => {
+//     display.focus();
+// })
+
+const clearButtons = document.querySelectorAll('#buttonClear, #buttonBackspace');
+
+clearButtons.forEach(button => {
+    button.addEventListener("mousedown", (event) => {
+    button.style.background = "grey";
+})
+
+button.addEventListener("mouseup", (event) => {
+    button.style.background = "rgb(55, 55, 55)";
+})
+})
+
+const digitButtons = document.querySelectorAll('#buttonZero, #buttonOne, #buttonTwo, #buttonThree, #buttonFour, #buttonFive, #buttonSix, #buttonSeven, #buttonEight, #buttonNine');
+
+digitButtons.forEach(button => {
+    button.addEventListener("mousedown", (event) => {
+    button.style.background = "grey";
+})
+
+button.addEventListener("mouseup", (event) => {
+    button.style.background = "rgb(70, 70, 70)";
+})
+})
+
+const operatorButtons = document.querySelectorAll('#buttonAdd, #buttonSubtract, #buttonMultiply, #buttonDivide');
+
+operatorButtons.forEach(button => {
+    button.addEventListener("mousedown", (event) => {
+    button.style.background = "grey";
+})
+
+button.addEventListener("mouseup", (event) => {
+    button.style.background = "yellow";
+})
+})
 
 buttonContainer.addEventListener('click', (event) => {
     const target = event.target.closest('button'); // finds nearest <button>
