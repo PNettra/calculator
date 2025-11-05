@@ -1,19 +1,24 @@
+body, .container, .buttonContainer {
+    display: flex;  
+}
+
 body {
-    display: flex;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
     background: pink;
 }
 
+.container, .display {
+    border: 50px solid black;
+}
+
 .container {
-    display: flex;
     flex-direction: column;
     width: 306px;
     min-height: 400px;
     margin-top: 100px;
     background: rgb(93, 93, 93);
     border-radius: 7px;
-    border: 50px solid black;
 }
 
 .display {
@@ -22,8 +27,13 @@ body {
     min-height: 50px;
     text-align: right;
     font-size: 40px;
-    border: 50px solid black;
     background: rgb(70, 70, 70);
+    /* padding: 1px; */
+}
+
+.buttonContainer {
+    flex-wrap: wrap;
+    flex: 1;
 }
 
 button:hover {
@@ -41,14 +51,6 @@ button:hover {
 #buttonDivide, #buttonMultiply, #buttonAdd, #buttonSubtract, #buttonEquals {
     background: yellow;
     color: black;
-}
-
-.buttonContainer {
-    /* height: 80%;
-    width: 100%; */
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
 }
 
 button {

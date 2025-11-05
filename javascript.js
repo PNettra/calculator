@@ -1,3 +1,6 @@
+// issue 1: returns NaN after pressing an operator, equals, decimal, then equal
+// issue 2: allows for more than one decimal in input if pressing decimal, operator, decimal
+
 const container = document.createElement("div");
 container.classList.add('container');
 document.body.appendChild(container);
@@ -9,7 +12,6 @@ display.classList.add('display');
 container.appendChild(display);
 display.style.border = "5px solid black";
 display.style.height = "20px";
-//display.tabIndex = 0;
 
 const buttonContainer = document.createElement("div");
 buttonContainer.classList.add('buttonContainer');
@@ -129,7 +131,7 @@ const divide = function(firstInt, secondInt) {
     }
     else {
         let divisor = firstInt / secondInt; 
-        return divisor.toFixed(11);
+        return divisor.toFixed(10);
     }
 };
 
@@ -152,15 +154,7 @@ const operate = function(firstInt, operator, secondInt) {
     }
 }
 
-// const displayOutput = function(firstInt, operator, secondInt) {
-
-// }
-
 let justCalculated = false;
-
-// display.addEventListener("click", (event) => {
-//     display.focus();
-// })
 
 const clearButtons = document.querySelectorAll('#buttonClear, #buttonBackspace');
 
@@ -174,7 +168,7 @@ button.addEventListener("mouseup", (event) => {
 })
 })
 
-const digitButtons = document.querySelectorAll('#buttonZero, #buttonOne, #buttonTwo, #buttonThree, #buttonFour, #buttonFive, #buttonSix, #buttonSeven, #buttonEight, #buttonNine');
+const digitButtons = document.querySelectorAll('#buttonZero, #buttonOne, #buttonTwo, #buttonThree, #buttonFour, #buttonFive, #buttonSix, #buttonSeven, #buttonEight, #buttonNine, #buttonDecimal');
 
 digitButtons.forEach(button => {
     button.addEventListener("mousedown", (event) => {
@@ -186,7 +180,7 @@ button.addEventListener("mouseup", (event) => {
 })
 })
 
-const operatorButtons = document.querySelectorAll('#buttonAdd, #buttonSubtract, #buttonMultiply, #buttonDivide');
+const operatorButtons = document.querySelectorAll('#buttonAdd, #buttonSubtract, #buttonMultiply, #buttonDivide, #buttonEquals');
 
 operatorButtons.forEach(button => {
     button.addEventListener("mousedown", (event) => {
